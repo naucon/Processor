@@ -1,0 +1,33 @@
+@startuml
+
+interface ProcessorInterface {
+    +bool process(Model $model)
+}
+
+abstract class AbstractProcessor {
+    + __construct(string $modelClass)
+}
+
+AbstractProcessor ..|> ProcessorInterface
+AbstractProcessor ..|> SupportAwareInterface
+
+class ProcessorChain {
+    +void addProcessor(ProcessorInterface $processor)
+    +bool process(Model $model)
+}
+
+ProcessorChain *--> AbstractProcessor
+ProcessorChain ..|> ProcessorInterface
+
+interface ProcessorAwareInterface {
+    +void setProcessor(ProcessorInterface $processor)
+}
+
+ProcessorAwareInterface --> ProcessorChain
+
+interface SupportAwareInterface {
+    +bool support(Model $model)
+}
+
+
+@enduml
