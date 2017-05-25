@@ -28,7 +28,7 @@ class NullProcessor extends AbstractProcessor
      * @param   string      $modelClass      model class name
      * @param   bool        $return          optional process return value
      */
-    public function __construct($modelClass, $return=null)
+    public function __construct($modelClass, $return = null)
     {
         $this->return = $return;
 

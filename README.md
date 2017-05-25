@@ -17,7 +17,7 @@ The goal is to split large processing code into multiple smaller task which are 
 
 ### Compatibility
 
-* PHP5.3
+* PHP5.5
 
 
 Installation
